@@ -65,9 +65,9 @@ class _HealthMonitoringScreenState extends State<HealthMonitoringScreen> {
 
     // Update latest data for dashboard
     final prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('latest_bp_systolic', newEntry['bp_systolic']);
-    await prefs.setInt('latest_bp_diastolic', newEntry['bp_diastolic']);
-    await prefs.setDouble('latest_sugar', newEntry['sugar']);
+    await prefs.setInt('latest_bp_systolic', newEntry['bp_systolic'] as int);
+    await prefs.setInt('latest_bp_diastolic', newEntry['bp_diastolic'] as int);
+    await prefs.setDouble('latest_sugar', newEntry['sugar'] as double);
     await prefs.setString('latest_health_date', DateFormat('MMM dd, yyyy').format(now));
 
     _bpSystolicController.clear();
